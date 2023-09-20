@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a='1a2';
+        let b = +a;
+        let c = parseInt(a);
+        alert(b);  //NaN
+        alert(c);  //1
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Faking Textarea on Typing</title>
+  </head>
+  <body>
+    <center>
+      <h2>Type anything slowly</h2>
+      <textarea
+        id="txt"
+        cols="40"
+        rows="10"
+        onkeydown="typeTextarea();" 
+      ></textarea>
+    </center>
+
+    <script>
+      var fakeText = "TÔI LÀ MỘT ĐỨA NGỐC!!!";
+      var index = 0;
+      var x = "";
+
+      function typeTextarea() {
+        document.getElementById("txt").value = "";
+        if (index < fakeText.length) {
+          x += fakeText[index];
+          document.getElementById("txt").value = x;
+          index++;
+        } else {
+          document.getElementById('txt').value = "";
+          index = 0;
+        }
+        // setTimeout(typeTextarea(),1);
+      }
+    </script>
+  </body>
+</html>

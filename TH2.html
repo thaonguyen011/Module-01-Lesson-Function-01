@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h2>Temperature Converted</h2>
+      <p>Type a value in the Fahrenheit field to convert the value</p>
+      <p>
+        Fahrenheit
+        <input type="number" width="30" id="fah" />
+      </p>
+      <input type="button" onclick="convert()" value="Convert" />
+      <p id="result"></p>
+    </form>
+    <script>
+      function convert() {
+        let x = parseFloat(document.getElementById("fah").value);
+        
+        // let x = +document.getElementById("fah").value; // Sai khi nhập kí vào, ép giá trị thành 0;
+        let result = (x - 32) / 1.8;
+        document.getElementById("result").innerHTML = "Celcius: " + result;
+      }
+
+      //Chay debug: typeof x = string; tại sao thực hiện phép toán được. --> tự ép thành number
+      //Tại sao '+.value' ép giá trị có kí tự thành 0, còn parse thi trả về NaN
+    </script>
+  </body>
+</html>
